@@ -1,0 +1,20 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Or.hdl
+/**
+ * Or gate:
+ * if (a or b) out = 1, else out = 0 
+ */
+
+//Edited by Sylphara
+
+CHIP Or {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    Xor(a=a, b=b, out=temp1);
+    And(a=a, b=b, out=temp2);
+    Xor(a=temp1, b=temp2, out=out);
+}
